@@ -11,6 +11,7 @@ body {
     max-width: 700px;
     margin: 0 auto;
     position: relative;
+    padding: 0 10px;
 }
 
 h1 {
@@ -21,10 +22,13 @@ h1 {
     margin: 5px 0;
 }
 
-input[type=text],input[type=date] {
-    border: 0;
+input[type=text],input[type=date],textarea {
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 2px #eee;
     display: block;
     width: 100%;
+    background-color: #eee;
+    outline:none
 }
 
 button {
@@ -32,7 +36,8 @@ button {
     display: inline-block;
 }
 
-input, .task-item, button {
+input, .task-item, button,
+textarea {
     border-radius: 3px;
     padding: 10px;
 }
@@ -59,6 +64,9 @@ input, .task-item, button {
 .add-task [type=submit] {
     width:  14%;
 }
+.fr {
+    float: right;
+}
 
 .task-detail {
     bottom: 0;
@@ -66,11 +74,23 @@ input, .task-item, button {
     background: #fff;
     right: 0;
     z-index: 9;
+    width: 50%;
+    height: 100%;
+    color: #333;
+}
+.content {
+    padding: 10px;
+    font-weight: 700;
+}
+
+.task-detail > * {
+    margin-bottom: 10px;
 }
 
 .task-detail,
 .task-detail-mask {
     position: absolute;
+    display: none;
 }
 
 .task-detail-mask {
@@ -79,4 +99,8 @@ input, .task-item, button {
     right: 0;
     left: 0;
     background: rgba(30,30,30,.6);
+}
+
+.task-content {
+    margin-left: 10px;
 }
